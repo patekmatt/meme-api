@@ -5,6 +5,7 @@ const {
 } = require('./lib/service')
 
 const app = express()
+app.use(express.json())
 const port = 3000
 
 app.route('/meme')
