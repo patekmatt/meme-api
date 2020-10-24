@@ -21,6 +21,7 @@
   "homepage": "https://github.com/patekmatt/meme-api#readme",
   "dependencies": {
     "aws-sdk": "^2.778.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "uuid": "^8.3.1"
   },
