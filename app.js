@@ -1,17 +1,18 @@
 const express = require('express')
 
-const addMeme = require('./lib/getMeme')
-const getMeme = require('./lib/getMeme')
-const removeMeme = require('./lib/removeMeme')
-const updateMeme = require('./lib/updateMeme')
+const {
+  addMeme, getMeme, removeMeme, updateMeme
+} = require('./lib/service')
 
 const app = express()
 const port = 3000
 
+app.route('/meme')
+  .post(addMeme)
+
 app.route('/meme/:id')
   .delete(removeMeme)
   .get(getMeme)
-  .post(addMeme)
   .put(updateMeme)
 
 app.listen(port, () => {

@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/patekmatt/meme-api#readme",
   "dependencies": {
+    "aws-sdk": "^2.778.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
