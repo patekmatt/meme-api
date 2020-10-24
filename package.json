@@ -1,0 +1,27 @@
+{
+  "name": "meme-api",
+  "version": "1.0.0",
+  "description": "Create, Update, Read, and Delete memes from AWS S3",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard --verbose",
+    "lint:fix": "standard --fix --verbose",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patekmatt/meme-api.git"
+  },
+  "author": "Matt Patek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patekmatt/meme-api/issues"
+  },
+  "homepage": "https://github.com/patekmatt/meme-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "standard": "^15.0.0"
+  }
+}
