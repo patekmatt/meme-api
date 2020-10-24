@@ -8,13 +8,12 @@ const app = express()
 app.use(express.json())
 const port = 3000
 
-app.route('/meme')
-  .post(addMeme)
-
+app.post('/meme', addMeme)
 app.route('/meme/:id')
   .delete(removeMeme)
   .get(getMeme)
   .put(updateMeme)
+// app.get('/meme/random', randomMeme)
 
 app.listen(port, () => {
   console.log(`App running on port ${port}...`)
