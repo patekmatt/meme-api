@@ -1,5 +1,8 @@
 const express = require('express')
+<<<<<<< HEAD
 const { validate, ValidationError } = require('express-validation')
+=======
+>>>>>>> 00401eb68d2a967949a60e7129037f88db621735
 require('dotenv').config()
 
 const {
@@ -9,6 +12,7 @@ const schemas = require('./lib/schemas')
 
 const app = express()
 app.use(express.json({ limit: '50mb' }))
+<<<<<<< HEAD
 
 const port = 3000
 
@@ -25,6 +29,16 @@ app.use((err, req, res, next) => {
   }
   return res.status(500).json(err)
 })
+=======
+const port = 3000
+
+app.post('/meme', addMeme)
+app.get('/meme/random', randomMeme)
+app.route('/meme/:id')
+  .delete(removeMeme)
+  .get(getMeme)
+  .put(updateMeme)
+>>>>>>> 00401eb68d2a967949a60e7129037f88db621735
 
 app.listen(port, () => {
   console.log(`App running on port ${port}...`)
