@@ -19,11 +19,10 @@ app.route('/meme/:id')
   .get(validate(schemas.getMeme), getMeme)
   .put(validate(schemas.updateMeme), updateMeme)
 
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
   if (err instanceof ValidationError) {
     return res.status(err.statusCode).json(err)
   }
-
   return res.status(500).json(err)
 })
 
