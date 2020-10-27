@@ -19,9 +19,9 @@ describe('GET /memes', () => {
   })
 })
 
-describe('GET /meme/:id', () => {
+describe('GET /memes/:id', () => {
   it('should return a meme', async () => {
-    const res = await request(app).get(`/meme/${MEME_1_ID}`)
+    const res = await request(app).get(`/memes/${MEME_1_ID}`)
     const actual = Buffer.from(res.body, 'base64')
     expect(res.status).toBe(200)
     expect(actual).toEqual(meme1)

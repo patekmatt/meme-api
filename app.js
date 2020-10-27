@@ -21,11 +21,10 @@ app.use(express.json({ limit: '50mb' }))
 const port = process.env.PORT || 3000
 
 // routes
-app.post('/meme', validate(schemas.addMeme), addMeme)
-app.get('/memes', getAllMemes)
+app.route('/memes').get(getAllMemes).post(validate(schemas.addMeme), addMeme)
 app.get('/memes/random', randomMeme)
 app
-  .route('/meme/:id')
+  .route('/memes/:id')
   .delete(validate(schemas.getMeme), removeMeme)
   .get(validate(schemas.getMeme), getMeme)
   .put(validate(schemas.updateMeme), updateMeme)
