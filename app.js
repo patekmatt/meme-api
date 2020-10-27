@@ -4,7 +4,12 @@ const { validate, ValidationError } = require('express-validation')
 require('dotenv').config()
 
 const {
-  addMeme, getAllMemes, getMeme, randomMeme, removeMeme, updateMeme
+  addMeme,
+  getAllMemes,
+  getMeme,
+  randomMeme,
+  removeMeme,
+  updateMeme
 } = require('./lib/service')
 const schemas = require('./lib/schemas')
 
@@ -17,7 +22,8 @@ const port = 3000
 app.post('/meme', validate(schemas.addMeme), addMeme)
 app.get('/memes', getAllMemes)
 app.get('/meme/random', randomMeme)
-app.route('/meme/:id')
+app
+  .route('/meme/:id')
   .delete(validate(schemas.getMeme), removeMeme)
   .get(validate(schemas.getMeme), getMeme)
   .put(validate(schemas.updateMeme), updateMeme)
